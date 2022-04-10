@@ -1,0 +1,20 @@
+<!--
+ - Created by AlexanderKireev on 3/26/2020.
+ -->
+
+<!-- Get All Objects From Org -->
+<template>
+    <lightning-card title="All objects of organization." icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+                    name="progress"
+                    label="Select Object"
+                    value={value}
+                    placeholder="---Select Object---"
+                    options={options}
+                    onchange={handleChange} >
+            </lightning-combobox>
+<!--            <p>Selected value is: {value}</p>-->
+        </div>
+    </lightning-card>
+</template>

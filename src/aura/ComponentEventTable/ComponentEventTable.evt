@@ -1,0 +1,11 @@
+<!--
+ - Created by akireyeu on 19.06.2019.
+ -->
+
+<aura:event type="COMPONENT" description="ComponentEventTable">
+
+    <aura:attribute name="object" type="String"/>
+    <aura:attribute name="columnsTable" type="List"/>
+    <aura:attribute name="truth" type="Boolean"/>
+
+</aura:event>

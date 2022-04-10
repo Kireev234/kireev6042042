@@ -1,0 +1,64 @@
+/**
+ * Created by akireyeu on 24.12.2019.
+ */
+.THIS {
+}
+.THIS.c-container {
+    border: 1px solid #d8dde6;
+    margin: 10px 0 10px 0;
+    padding: 10px;
+}
+.THIS .container {
+    margin: 10px;
+}
+.THIS .c {
+    width: 70px;
+}
+.THIS .parent-wrapper {
+    display: flex;
+    justify-content: flex-start;
+}
+.THIS .custom {
+    display: inline-block;
+    width: 80px;
+    margin: 0 0.25rem;
+}
+.THIS .custom.slds-form-element label.slds-form-element__label.slds-no-flex {
+   display: none;
+}
+.THIS .likeDislike {
+    margin-left: 10px;
+}
+.THIS .icons {
+     display: flex;
+     justify-content: space-between;
+     flex-direction: row;
+     margin: 5px 0;
+ }
+.THIS .icons2 {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin: 5px 0;
+}
+.THIS .icons-into {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+}
+.THIS .iconsIn {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-right: 50px;
+}
+.THIS .scrollerSize {
+    max-height: 100px;
+    max-width: 300px;
+}
+.THIS .entries {
+    width: 50px;
+    margin:0 5px;
+}

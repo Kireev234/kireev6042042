@@ -1,0 +1,26 @@
+<apex:page standardController="Contact"
+    id="contactMergePage"
+    recordSetVar="cont"
+    showHeader="true"
+    sidebar="false"
+    docType="html-5.0"
+    standardStylesheets="true">
+
+  <apex:pageBlock title="Contact Summary">
+                  
+                <apex:pageBlockTable value="{!cont}" var="item"  id="list">
+                                       
+                    <apex:column headerValue="Name">
+                        <apex:outputLink value="/{!item.id}">
+                            <apex:outputText >{!item.name}</apex:outputText>
+                        </apex:outputLink>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Phone">
+                        <apex:outputtext value="{!item.phone}"/>
+                    </apex:column>
+                    
+                </apex:pageBlockTable>    
+                                              
+    </apex:pageBlock>
+</apex:page>

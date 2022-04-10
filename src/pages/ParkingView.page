@@ -1,0 +1,30 @@
+<apex:page controller="ParkingViewController">
+    <apex:form >
+    <apex:pageBlock >
+        
+        <apex:actionFunction action="{!getCars}" name="selectCars" rerender="CarTableSection"/>
+        
+    Parking:
+        <apex:selectList size="1" value="{!parkingId}" onchange="selectCars();">
+            <apex:selectOptions value="{!parkingSelectOptionList}"/>
+        </apex:selectList>
+    <apex:pageBlockSection title="Car Table" columns="1" id="CarTableSection">
+        <apex:pageBlockTable value="{!carList}" var="item">
+       
+            <apex:column value="{!item.Name}"/>
+            <apex:column value="{!item.Brand__c}"/>
+            <apex:column value="{!item.Car_Owner__c}"/>
+            <apex:column value="{!item.Due_data__c}"/>
+            <apex:column value="{!item.Parking__c}"/>
+            <apex:column value="{!item.Price__c}"/>
+            <apex:column value="{!item.Release__c}"/>
+            <apex:column value="{!item.Status__c}"/>
+            
+        
+        </apex:pageBlockTable>
+        
+        </apex:pageBlockSection>
+    
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

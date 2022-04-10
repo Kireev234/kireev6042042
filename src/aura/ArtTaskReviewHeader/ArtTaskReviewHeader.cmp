@@ -1,0 +1,29 @@
+<!--
+ - Created by akireyeu on 12.02.2020.
+ -->
+
+<aura:component description="ArtTaskReviewHeader">
+
+    <aura:attribute name="listField" type="List" default="[{name:'NAME',apiName:'Name',arrowDirection:''},
+    {name:'PREVIEW',apiName:'Views__c',arrowDirection:''}, {name:'LIKE',apiName:'Like__c',arrowDirection:''}, {name:'DISLIKE',apiName:'Dislike__c',arrowDirection:''}]"/>
+
+    <aura:handler name="myEvent" event="c:ArtTaskEvent" action="{!c.handleEvent}" />
+
+    <div class="c-container">
+        <div class="icons">
+            <div>
+                <c:ArtTaskReviewHeaderComponent  field="{!v.listField[0]}"/>
+            </div>
+            <div class="containerInner">
+                <lightning:layout multipleRows="false">
+                    <aura:iteration items="{!v.listField}"  var="item" start="1">
+                        <lightning:layoutItem class="boxItem">
+                            <c:ArtTaskReviewHeaderComponent  field="{!item}"/>
+                        </lightning:layoutItem>
+                    </aura:iteration>
+                </lightning:layout>
+            </div>
+        </div>
+    </div>
+
+</aura:component>

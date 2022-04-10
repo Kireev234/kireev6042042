@@ -1,0 +1,74 @@
+<!--
+ - Created by akireyeu on 24.06.2019.
+ -->
+
+<aura:component description="MainComponentTest" implements="force:appHostable,flexipage:availableForAllPageTypes" access="global">
+
+    <!--<aura:handler name="myCompEventTest" event="c:CompEventTest" action="{!c.handleBubbledEvent}" />-->
+    <!--<aura:handler name="myCompEventTest" event="c:CompEventTest" action="{!c.handleCapturedEvent}" phase="capture" />-->
+
+    <!--<aura:handler  event="c:appEventTest" action="{!c.appHandleBubbledEvent}" phase="bubble" />-->
+    <!--<aura:handler  event="c:AppEventTest" action="{!c.appHandleCapturedEvent}" phase="capture" />-->
+    <!--<aura:handler  event="c:appEventTest" action="{!c.appHandleDefaultEvent}" />-->
+
+            <lightning:card>
+
+                <lightning:card>
+
+                    <lightning:layout>
+                        <div class="container" style="margin: 20px;">
+                            <c:Component1 aura:id="component1"/>
+                        </div>
+                    </lightning:layout>
+
+                </lightning:card>
+
+                <lightning:card>
+
+                    <lightning:layout>
+                        <div class="container" style="margin: 20px;">
+                            <c:Component2 aura:id="component2"/>
+                        </div>
+
+                        <div class="container" style="margin: 20px;">
+                            <c:Component3 aura:id="component3"/>
+                        </div>
+                    </lightning:layout>
+
+                </lightning:card>
+
+                <lightning:card>
+
+                    <lightning:layout>
+                        <div class="container" style="margin: 20px;">
+                            <c:Component4 aura:id="component4"/>
+                        </div>
+
+                        <div class="container" style="margin: 20px;">
+                            <c:Component5 aura:id="component5"/>
+                        </div>
+
+                        <div class="container" style="margin: 20px;">
+                            <c:Component6 aura:id="component6"/>
+                        </div>
+
+                        <div class="container" style="margin: 20px;">
+                            
+                        </div>
+                    </lightning:layout>
+
+                </lightning:card>
+
+                <lightning:card>
+
+                    <lightning:layout>
+                        <div class="container" style="margin: 20px;">
+                           
+                        </div>
+                    </lightning:layout>
+
+                </lightning:card>
+
+            </lightning:card>
+
+</aura:component>

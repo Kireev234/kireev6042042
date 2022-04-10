@@ -1,0 +1,37 @@
+<!--
+ - Created by akireyeu on 04.02.2020.
+ -->
+
+<aura:component description="ArtTaskIterationProd" controller="ArtTaskProductApex">
+
+    <aura:attribute name="productList" type="List"/>
+    <aura:attribute name="showProductList" type="List" description="list of products"/>
+    <aura:attribute name="numberItems" type="Integer" default="5"/>
+    <aura:attribute name="listProductSize" type="Integer"/>
+    <aura:attribute name="start" type="Integer" default="0"/>
+    <aura:attribute name="end" type="Integer" default="5"/>
+    <aura:attribute name="num" type="Integer" default="1"/>
+    <aura:attribute name="field" type="String" default=""/>
+    <aura:attribute name="order" type="String" default=""/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:handler name="myEvent" event="c:ArtTaskEvent" action="{!c.handleEvent}" />
+
+    <aura:method name="childMessageMethod" action="{!c.handleMethod}" access="public">
+        <aura:attribute name="field" type="String" />
+        <aura:attribute name="order" type="String" />
+    </aura:method>
+
+    <div>
+        <aura:iteration items="{!v.showProductList}" var="item">
+            <c:ArtTaskProductCMP product="{!item}"/>
+        </aura:iteration>
+    </div>
+    <div>
+        <c:ArtTaskProductNumberItems/>
+    </div>
+    <div>
+        <c:ArtTaskProductPagination aura:id="pagination" listProductSize="{!v.listProductSize}" num="{!v.num}"
+                                    start="{!v.start}" end="{!v.end}"/>
+    </div>
+</aura:component>

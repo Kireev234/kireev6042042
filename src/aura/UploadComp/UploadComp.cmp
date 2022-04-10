@@ -1,0 +1,29 @@
+<!--
+ - Created by akireyeu on 02.07.2019.
+ -->
+
+<aura:component description="UploadComp" controller="UploadApex" implements="force:appHostable,flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="accept" type="List" default="[]"/>
+    <aura:attribute name="multiple" type="Boolean" default="true"/>
+    <aura:attribute name="disabled" type="Boolean" default="false"/>
+    <aura:attribute name="myText" type="string" default=""/>
+
+    <div class="container" style="width:100%;">
+        <lightning:card >
+            <lightning:layout >
+                <div class="container" style="margin: 20px; width:15%;">
+                    <lightning:fileUpload  name="fileUploader"
+                                           label= "Demo Upload"
+                                           multiple="{!v.multiple}"
+                                           accept="{!v.accept}"
+                                           disabled="{!v.disabled}"
+                                           recordId="0012v00002O1C10AAF"
+                                           onuploadfinished="{! c.handleUploadFinished }"/>
+                </div>
+                <div class="container" style="margin: 20px; width:15%;">
+                    <lightning:textarea name="input" readonly="true" value="{!v.myText}" label="Read-only. File type is:" />
+                </div>
+            </lightning:layout>
+        </lightning:card>
+    </div>
+</aura:component>

@@ -1,0 +1,26 @@
+<!--
+ - Created by akireyeu on 28.11.2019.
+ -->
+
+<apex:page id="ErrorVSFPage" lightningStylesheets="true" controller="MyThrowError">
+    <apex:includeLightning />
+    <html>
+    <head>
+        <script>
+            $Lightning.use(
+                    "c:ErrorApp",
+                    function() {
+                        $Lightning.createComponent("c:MainCompTask",
+                                {},
+                                "publicSite",
+                                function(component){}
+                        )
+                    }
+            );
+        </script>
+    </head>
+    </html>
+    <body>
+    <div id="publicSite"></div>
+    </body>
+</apex:page>

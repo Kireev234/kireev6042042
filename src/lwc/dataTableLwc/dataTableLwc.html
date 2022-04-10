@@ -1,0 +1,30 @@
+<!--
+ - Created by AlexanderKireev on 3/30/2020.
+ -->
+
+<!-- Data Table Lwc -->
+<template>
+    <br/>
+    <div style="height: 300px;">
+        <lightning-datatable
+                key-field="id"
+                data={data}
+                columns={columns}
+                onrowaction={handleRowAction}>
+        </lightning-datatable>
+    </div>
+<!--    <lightning-record-edit-form record-id={record}-->
+<!--                                object-api-name={objectapi}>-->
+<!--    </lightning-record-edit-form>-->
+<!--    <lightning-record-form-->
+<!--            record-id={record}-->
+<!--            object-api-name={objectapi}-->
+<!--            columns="2"-->
+<!--            mode="edit"-->
+<!--            layout-type="Compact">-->
+<!--    </lightning-record-form>-->
+<!--      <lightning-record-form object-api-name="Account"-->
+<!--             layout-type="Compact"-->
+<!--             columns="2">-->
+<!--      </lightning-record-form>-->
+</template>

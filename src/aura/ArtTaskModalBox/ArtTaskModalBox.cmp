@@ -1,0 +1,42 @@
+<!--
+ - Created by akireyeu on 12.02.2020.
+ -->
+
+<aura:component description="ArtTaskModalBox">
+
+    <aura:attribute name="isOpenModalBox" type="Boolean" default="false"/>
+    <aura:attribute name="productId" type="String"/>
+
+    <aura:handler name="myEvent" event="c:ArtTaskEvent" action="{!c.handleEvent}" />
+
+    <aura:method name="modalMethod" action="{!c.handleMethod}" access="public">
+        <aura:attribute name="productId" type="String" />
+    </aura:method>
+
+    <aura:if isTrue="{!v.isOpenModalBox}">
+        <!--###### MODAL BOX Start######-->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- ###### MODAL BOX HEADER Start ######-->
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModelTable }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">REVIEWS</h2>
+                </header>
+                <!--###### MODAL BOX BODY Part Start######-->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <c:ArtTaskReviewHeader/>
+                    <c:ArtTaskIterationReview aura:id="IterationReview"/>
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start ######-->
+            </div>
+        </section>
+
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if>
+
+</aura:component>

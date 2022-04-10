@@ -1,0 +1,43 @@
+<!--
+ - Created by akireyeu on 15.07.2019.
+ -->
+
+<aura:component description="MainCompTask" access="global"  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" controller="MyThrowError" >
+
+    <div style="margin: 20px;">
+        <lightning:button aura:id="returnErr1" label="Custom Error" onclick="{! c.return1 }"/>
+        <lightning:button aura:id="returnErr2" label="SObject Error" onclick="{! c.return2 }"/>
+        <lightning:button aura:id="returnErr3" label="Math Error" onclick="{! c.return3 }"/>
+        <lightning:button aura:id="returnErr4" label="Search Error" onclick="{! c.return4 }"/>
+        <lightning:button aura:id="returnErr5" label="Xml Error" onclick="{! c.return5 }"/>
+        <lightning:button aura:id="returnErr6" label="Async Error" onclick="{! c.return6 }"/>
+        <lightning:button aura:id="returnErr7" label="BigObject Error" onclick="{! c.return7 }"/>
+    </div>
+    <!--<div style="margin: 20px;">-->
+        <!--<lightning:button aura:id="returnErr8" label="Callout Error" onclick="{! c.return8 }"/>-->
+        <!--<lightning:button aura:id="returnErr9" label="Dml Error" onclick="{! c.return9 }"/>-->
+        <!--<lightning:button aura:id="returnErr10" label="Email Error" onclick="{! c.return10 }"/>-->
+        <!--<lightning:button aura:id="returnErr11" label="ExternalObject Error" onclick="{! c.return11 }"/>-->
+        <!--<lightning:button aura:id="returnErr12" label="Illegal Argument Error" onclick="{! c.return12 }"/>-->
+        <!--<lightning:button aura:id="returnErr13" label="InvalidParameterValue" onclick="{! c.return13 }"/>-->
+        <!--<lightning:button aura:id="returnErr14" label="Limit Error" onclick="{! c.return14 }"/>-->
+    <!--</div>-->
+    <!--<div style="margin: 20px;">-->
+        <!--<lightning:button aura:id="returnErr15" label="JSONE Error" onclick="{! c.return15 }"/>-->
+        <!--<lightning:button aura:id="returnErr16" label="List Error" onclick="{! c.return16 }"/>-->
+        <!--<lightning:button aura:id="returnErr17" label="NoAccess Error" onclick="{! c.return17 }"/>-->
+        <!--<lightning:button aura:id="returnErr18" label="NoDataFound Error" onclick="{! c.return18 }"/>-->
+        <!--<lightning:button aura:id="returnErr19" label="NoSuchElement Error" onclick="{! c.return19 }"/>-->
+        <!--<lightning:button aura:id="returnErr20" label="NullPointer Error" onclick="{! c.return20 }"/>-->
+        <!--<lightning:button aura:id="returnErr21" label="Query Error" onclick="{! c.return21 }"/>-->
+    <!--</div>-->
+    <!--<div style="margin: 20px;">-->
+        <!--<lightning:button aura:id="returnErr22" label="RequiredFeatureMissing Error" onclick="{! c.return22 }"/>-->
+        <!--<lightning:button aura:id="returnErr23" label="Security Error" onclick="{! c.return23 }"/>-->
+        <!--<lightning:button aura:id="returnErr24" label="Serialization Error" onclick="{! c.return24 }"/>-->
+        <!--<lightning:button aura:id="returnErr25" label="String Error" onclick="{! c.return25 }"/>-->
+        <!--<lightning:button aura:id="returnErr26" label="Type Error" onclick="{! c.return26 }"/>-->
+        <!--<lightning:button aura:id="returnErr27" label="Visualforce Error" onclick="{! c.return27 }"/>-->
+    <!--</div>-->
+    <c:CustomToast aura:id="CustomToast"/>
+</aura:component>

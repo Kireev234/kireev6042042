@@ -1,0 +1,112 @@
+<!--
+ - Created by akireyeu on 11.02.2020.
+ -->
+
+<aura:component description="ArtTaskReviewCMP" controller="ArtTaskProductApex">
+    <aura:attribute name="triangleDirection" type="string" default=""/>
+    <aura:attribute name="review" type="Object"/>
+    <aura:attribute name="disliked" type="Boolean" default="false"/>
+    <aura:attribute name="liked" type="Boolean" default="false"/>
+
+    <aura:registerEvent name="myEvent" type="c:ArtTaskEvent"/>
+
+    <div class="c-container">
+        <div class="icons">
+            <div style="display: flex; flex-direction: column">
+                <div style="display: flex; flex-direction: row">
+                    <div>
+                        <aura:if isTrue="{! v.triangleDirection == 'down'}">
+                            <lightning:buttonIcon iconName="utility:up"  size="medium"  variant="bare" alternativeText="View Less" onclick="{! c.handleClick }"/>
+                        </aura:if>
+                    </div>
+                    <div>
+                        <aura:if isTrue="{! v.triangleDirection != 'down'}">
+                            <lightning:buttonIcon iconName="utility:down"  size="medium"  variant="bare" alternativeText="View More" onclick="{! c.handleClickR }"/>
+                        </aura:if>
+                    </div>
+                    <div>
+                            {!v.review.Name}
+                    </div>
+                </div>
+                <aura:if isTrue="{! v.triangleDirection != 'down'}">
+                    <div>
+                        <div>
+                            <b>Description</b>
+                        </div>
+                        <div class="over">
+                                {!v.review.Description__c}
+                        </div>
+                    </div>
+                </aura:if>
+            </div>
+            <div class="containerInner">
+                <aura:if isTrue="{! v.triangleDirection != 'down'}">
+                    <div class="container">
+                        <div style="margin: 7px">
+                            <lightning:icon iconName="utility:preview" size="xx-small"/>
+                        </div>
+                        <div >
+                                {!v.review.Views__c}
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div style="margin: 7px">
+                            <lightning:icon iconName="utility:like" size="xx-small"/>
+                        </div>
+                        <div >
+                                {!v.review.Like__c}
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div style="margin: 7px">
+                            <lightning:icon iconName="utility:dislike" size="xx-small"/>
+                        </div>
+                        <div>
+                                {!v.review.Dislike__c}
+                        </div>
+                    </div>
+                </aura:if>
+            </div>
+        </div>
+        <aura:if isTrue="{! v.triangleDirection == 'down'}">
+            <div>
+                <div>
+                    <b>Description</b>
+                </div>
+                <div class="icons" style="display: flex; flex-direction: row">
+                    <div style="word-wrap: break-word; width: 50%">
+                        <!--<ui:scrollerWrapper class="scrollerSize">-->
+                                {!v.review.Description__c}
+                        <!--</ui:scrollerWrapper>-->
+                    </div>
+                    <div class="containerInner">
+                        <div class="container">
+                            <div style="margin: 7px">
+                                <lightning:icon iconName="utility:preview" size="xx-small"/>
+                            </div>
+                            <div >
+                                    {!v.review.Views__c}
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div>
+                                <lightning:buttonIconStateful iconName="utility:like"  selected="{! v.liked }" onclick="{! c.handleLike }" alternativeText="Like"/>
+                            </div>
+                            <div>
+                                    {!v.review.Like__c}
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div >
+                                <lightning:buttonIconStateful iconName="utility:dislike" selected="{! v.disliked }" onclick="{! c.handleDislike }" alternativeText="Dislike"/>
+                            </div>
+                            <div>
+                                    {!v.review.Dislike__c}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

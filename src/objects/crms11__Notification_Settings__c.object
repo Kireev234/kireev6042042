@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>settings for notification rules.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>crms11__Enable_Pop_Out_Notifications__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>&quot;Enable Pop-Out Notifications&quot; checkbox is used to enable notification on Flexpricer page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to enable Pop-out notification on Flexpricer page</inlineHelpText>
+        <label>Enable Pop-Out Notifications</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>crms11__Enforce_Sharing_Rules__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked sharing rules will be enforced. For example if sharing setting for a Object is private, then notification will be based on only those records which are owned by the current user.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked sharing rules will be enforced. For example if sharing setting for a Object is private, then notification will be based on only those records which are owned by the current user.</inlineHelpText>
+        <label>Enforce Sharing Rules</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>crms11__Maximum_Number_of_pop_out_notifications__c</fullName>
+        <defaultValue>2</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Maximum Notifications Per Action</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>crms11__Sales_In_Last_N_Days__c</fullName>
+        <defaultValue>30</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Number of days prior to show sales  data in the notification for of a particular product.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of days prior to show sales  data in the notification for of a particular product.</inlineHelpText>
+        <label>Past Sales Day Count</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Notification Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

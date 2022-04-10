@@ -1,0 +1,26 @@
+/**
+ * Created by akireyeu on 06.02.2020.
+ */
+.THIS {
+}
+.THIS.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+}
+.THIS .custom {
+    display: flex;
+    width: 80px;
+    margin: 0 0.25rem;
+}
+.THIS .button {
+    display: flex;
+    margin: 0 0.25rem;
+}
+.THIS .slds-no-flex {
+    padding-right: 0;
+}
+.THIS .slds-grow {
+
+}

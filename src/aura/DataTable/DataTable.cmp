@@ -1,0 +1,51 @@
+<!--
+ - Created by akireyeu on 17.06.2019.
+ -->
+
+<aura:component description="DataTable" controller="DataTableApex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes">
+
+    <aura:attribute name="object" type="String" />
+    <aura:attribute name="val" type="Object[]"/>
+    <aura:attribute name="data" type="Object[]"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="truth" type ="Boolean" default="false"/>
+    <aura:attribute name="sortedBy" type="String"/>
+    <aura:attribute name="sortedDirection" type="String"/>
+    <aura:attribute name="selectedRows" type="String"/>
+    <aura:attribute name="recordId" type="String" />
+
+    <aura:handler event="force:showToast" action="{!c.handleChange}"/>
+
+    <aura:method name="sampleMethodTable" action="{!c.doInit}" access="global">
+        <aura:attribute name="objApiName" type="String" />
+        <aura:attribute name="objFields" type="List" />
+        <aura:attribute name="truth" type="Boolean" />
+    </aura:method>
+
+    <aura:method name="methodTable" action="{!c.setTruth}" access="global">
+        <aura:attribute name="truth" type="Boolean" />
+    </aura:method>
+
+    <div>
+        <aura:if isTrue="{!v.truth}">
+            <lightning:datatable keyField="id"
+                                 hideCheckboxColumn="true"
+                                 data="{!v.data}"
+                                 columns="{!v.columns}"
+                                 sortedBy="{! v.sortedBy }"
+                                 sortedDirection="{! v.sortedDirection }"
+                                 onsort="{! c.updateColumnSorting }"
+                                 onrowaction="{! c.handleRowAction }"
+                                 onrowselection="{! c.getSelectedName }"
+                                 showRowNumberColumn="true"/>
+        </aura:if>
+    </div>
+
+    <!--<div  class="container" style="margin: 20px;">-->
+        <!--<aura:if isTrue="{!v.truth}">-->
+            <!--<lightning:button label="New" onclick="{! c.createRecord }"/>-->
+        <!--</aura:if>-->
+    <!--</div>-->
+   
+    <c:CustomToast />
+</aura:component>

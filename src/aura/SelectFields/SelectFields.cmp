@@ -1,0 +1,45 @@
+<!--
+ - Created by ALEX on 25.05.2019.
+ -->
+
+<aura:component description="SelectFields" controller="GetFieldsController"
+                implements="flexipage:availableForRecordHome,force:hasRecordId">
+
+    <aura:attribute name="object" type="String" />
+    <aura:attribute name="childAttribute" type="String"/>
+    <aura:attribute name="options" type="Object[]" />
+    <aura:attribute name="values" type="Object[]" default="[]"/>
+    <aura:attribute name="val" type="Object[]"/>
+    <aura:attribute name="fLabel" type="Object[]"/>
+    <aura:attribute name="data" type="Object[]"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="truth" type ="Boolean" default="false"/>
+    <aura:attribute name="sortedBy" type="String"/>
+    <aura:attribute name="sortedDirection" type="String"/>
+    <aura:attribute name="defaultSortDirection" type="String"/>
+    <aura:attribute name="selectedRows" type="String"/>
+    <aura:attribute name="recordId" type="String" />
+    
+    <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}"/>
+    <aura:handler  name="init" action="{!c.refresh}" value="{!this}"/>
+
+    <aura:registerEvent name="myComponentEventTable" type="c:ComponentEventTable"/>
+
+    <aura:method name="sampleMethod" action="{!c.doInit}" access="global">
+    <aura:attribute name="objApiName" type="String" />
+    </aura:method>
+
+    <aura:method name="method" action="{!c.refresh}" access="global">
+    </aura:method>
+
+    <lightning:dualListbox aura:id="a_dualValue"
+                           name="fields"
+                           label= ""
+                           sourceLabel="Available Fields"
+                           selectedLabel="Selected Fields"
+                           options="{!v.options}"
+                           onchange="{!c.handleChange}"
+                           disableReordering="true"
+                           value="{!v.values}"/>
+
+</aura:component>

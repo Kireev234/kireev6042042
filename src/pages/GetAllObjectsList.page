@@ -1,0 +1,19 @@
+<apex:page controller="GetAllObjectsListController">
+
+  <apex:form >
+      <apex:pageBlock >
+    <apex:pageBlockSection >
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Object List"/>
+            <apex:selectList size="1">
+                <apex:selectOption value="{!objects}">
+                    </apex:selectOption>
+            </apex:selectList> 
+        </apex:pageBlockSectionItem>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+    
+    
+    
+ </apex:page>

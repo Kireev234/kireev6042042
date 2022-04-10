@@ -1,0 +1,24 @@
+<!--
+ - Created by akireyeu on 09.03.2020.
+ -->
+
+<aura:component description="TestChild">
+
+    <aura:attribute name="sstr" type="String"/>
+
+    <aura:handler name="change" value="{!v.sstr}" action="{!c.alert}"/>
+
+    <div>
+            {!v.sstr}
+    </div>
+    <div>
+            {#v.sstr}
+    </div>
+    <div>
+        <ui:inputText aura:id="input" label="Enter text" class="field" />
+
+    </div>
+    <div>
+        <ui:button aura:id="button" class="button" label="Click me" press="{!c.getInput}"/>
+    </div>
+</aura:component>

@@ -1,0 +1,169 @@
+/**
+ * Created by akireyeu on 07.10.2019.
+ */
+.THIS .orange {
+    width: 35px;
+    height: 25px;
+    background: #F4A460;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+.THIS .blue {
+    width: 35px;
+    height: 25px;
+    background: #6495ED;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+.THIS .grey {
+    width: 35px;
+    height: 25px;
+    background: #F0F8FF;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+.THIS .circle {
+    width: 30px;
+    height: 30px;
+    background: #F0F8FF;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+    border: 1px solid black;
+
+}
+.THIS .oval {
+    width: 200px;
+    height: 100px;
+    background: #8B0000;
+    -webkit-border-radius: 100px / 90px;
+    -moz-border-radius: 100px / 90px;
+    border-radius: 100px / 90px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.THIS .buttonApp {
+    background: #FFFF00;
+    margin-right: 5px;
+    height: 25px;
+    width: 65px;
+    border-radius: 1px;
+    border-width: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.THIS .buttonCmp {
+    background: #DA70D6;
+    height: 25px;
+    width: 65px;
+    border-radius: 1px;
+    border-width: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+
+}
+
+.THIS .circleTop {
+    width: 30px;
+    height: 30px;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+    border: 1px solid black;
+    margin: 10px;
+    margin-right: 30px;
+}
+.THIS .greyTop {
+    width: 40px;
+    height: 30px;
+    background: #F0F8FF;
+    border: 1px solid black;
+    margin: 10px;
+
+}
+.THIS.container {
+    display: flex;
+    justify-content: space-between;
+}
+.THIS.containerD {
+    display: flex;
+    justify-content: center;
+}
+.THIS .containerItemsL {
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-start;
+}
+.THIS .containerItemsR {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-end;
+}
+.THIS .itemsL {
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+}
+.THIS .itemsL2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+}
+.THIS .itemsM {
+    display: flex;
+    align-items: flex-end;
+    align-content: flex-end;
+}
+.THIS .itemsR {
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+}
+.THIS.containerArrow {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20px;
+
+}
+.THIS .arrowLM {
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 15px;
+    align-content: center;
+}
+.THIS .arrowRM {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 125px;
+    align-content: center;
+}
+.THIS .circleT {
+    width: 30px;
+    height: 30px;
+    background: #F0F8FF;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+    border: 1px solid black;
+    margin-bottom: 34px;
+
+}

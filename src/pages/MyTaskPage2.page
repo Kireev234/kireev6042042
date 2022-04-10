@@ -1,0 +1,26 @@
+<!--
+ - Created by akireyeu on 09.07.2019.
+ -->
+
+<apex:page id="MyTaskPage2" standardController="Account" extensions="MyTaskApex">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!acc}" var="item">
+                    <apex:column value="{!item.Name}" />
+                    <apex:column value="{!item.Phone}" />
+                    <apex:column value="{!item.Id}" />
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <button onclick="sendToLC()">Send to LC</button>
+            <script>
+                var lexOrigin = "https://kireev-dev-ed.lightning.force.com";
+                function sendToLC() {
+                    <!--var message = "{!acc}";-->
+                    var message = JSON.stringify("{!acc}");
+                    parent.postMessage(message, lexOrigin);
+                }
+            </script>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

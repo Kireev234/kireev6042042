@@ -1,0 +1,54 @@
+/**
+ * Created by akireyeu on 04.02.2020.
+ */
+.THIS.c-container {
+    border: 1px solid #d8dde6;
+    margin: 10px;
+    padding: 10px;
+}
+.THIS .icons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 5px 0;
+}
+.THIS .iconsIn {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-right: 50px;
+    align-items: center;
+    align-content: center;
+}
+.THIS .slds-button {
+      display: flex;
+}
+.THIS .box {
+    display: flex;
+    margin: 0 10px;
+    min-width: 80px;
+}
+.THIS .boxItem {
+    display: flex;
+    width: 20%;
+}
+.THIS .containerOut {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.THIS .iconsInner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+}
+.THIS .slds-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}

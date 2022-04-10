@@ -1,0 +1,28 @@
+<!--
+ - Created by akireyeu on 08.07.2019.
+ -->
+
+<aura:component description="MyTaskComp" implements="flexipage:availableForAllPageTypes" access="global">
+
+
+    <aura:attribute name="vfHost" type="String" default="kireev-dev-ed--c.visualforce.com"/>
+    <aura:attribute name="vfHostAcct" type="String" default="kireev-dev-ed--c.visualforce.com"/>
+
+    <aura:attribute name="objects" type="Object[]" />
+    <aura:attribute name="acct" type="Object[]" />
+
+    <aura:handler  name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <!--<iframe aura:id="vfFrame" src="{!'https://' + v.vfHost + '/apex/MyTaskPage'}"  width="100%"/>-->
+
+        <!--<aura:iteration items="{!v.objects}" var="object">-->
+            <!--<option value="{!object}" text="{!object}"></option>-->
+        <!--</aura:iteration>-->
+
+    <iframe aura:id="vfHostAcct" height="330px;" src="{!'https://' + v.vfHostAcct + '/apex/MyTaskPage2'}"  width="100%"/>
+
+    <aura:iteration items="{!v.acct}" var="obj">
+        <option value="{!obj}" text="{!obj}"></option>
+    </aura:iteration>
+
+</aura:component>

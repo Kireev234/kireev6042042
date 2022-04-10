@@ -1,0 +1,15 @@
+<!--
+ - Created by akireyeu on 08.07.2019.
+ -->
+
+<apex:page id="MyTaskPage">
+    <input id="message" type="text"/>
+    <button onclick="sendToLC()">Send to LC</button>
+    <script>
+        var lexOrigin = "https://kireev-dev-ed.lightning.force.com";
+        function sendToLC() {
+            var message = document.getElementById("message").value;
+            parent.postMessage(message, lexOrigin);
+        }
+    </script>
+</apex:page>

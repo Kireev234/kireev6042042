@@ -1,0 +1,31 @@
+<!--
+ - Created by akireyeu on 12.02.2020.
+ -->
+
+<aura:component description="ArtTaskReviewPagination">
+
+    <aura:attribute name="listReviewSize" type="Integer"/>
+    <aura:attribute name="start" type="Integer" default="0"/>
+    <aura:attribute name="end" type="Integer" default="5"/>
+    <aura:attribute name="num" type="Integer" default="1"/>
+    <aura:attribute name="numberEnd" type="Integer" />
+    <aura:attribute name="numberItems" type="Integer" default="5"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <aura:registerEvent name="myEvent" type="c:ArtTaskEvent"/>
+
+    <aura:method name="childReviewMethod" action="{!c.handleMethod}" access="public">
+        <aura:attribute name="param1" type="String" />
+        <aura:attribute name="numberItems" type="Integer" />
+    </aura:method>
+
+    <div class="container">
+        <lightning:button label="First"  disabled="{!v.num == 1}"  onclick="{!c.first}" class="button"/>
+        <lightning:button label="Previous" disabled="{!v.num == 1}" onclick="{!c.previous}" class="button" />
+        <lightning:input type="number"  aura:id="numberReview"  placeholder="{!v.num}" onchange="{!c.onChange}" class="custom" />
+        <lightning:button label="Next" disabled="{!v.num == (v.numberEnd)}"  onclick="{!c.next}" class="button"/>
+        <lightning:button label="Last" disabled="{!v.num == (v.numberEnd)}"  onclick="{!c.last}" class="button"/>
+    </div>
+
+</aura:component>

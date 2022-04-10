@@ -1,0 +1,95 @@
+<!--
+ - Created by akireyeu on 17.12.2019.
+ -->
+
+<apex:page id="ErrorShowVS"  standardController="Contact" extensions="ErrorShowVSApex"  >
+    <!--docType="html-5.0"-->
+    <!--controller="ErrorShowVSApex"-->
+
+    <apex:form id="a">
+        <apex:pageBlock id="b" title="Contact Page" mode="edit">
+            <apex:pageBlockSection id="c" title="New Contact" columns="1">
+                    <apex:inputField id="d1" value="{!contact.LastName}" required="true" onClick="OnClickField()" />
+                    <apex:inputField id="d2" value="{!contact.Email}" required="true"/>
+                    <apex:inputField id="d3" value="{!contact.Phone}" required="true"/>
+                    <apex:inputField id="d4" value="{!contact.Title}" required="true"/>
+                    <apex:inputField id="d5" value="{!contact.LeadSource}" required="true"/>
+                    <apex:inputField id="d6" value="{!contact.npe01__PreferredPhone__c}" required="true"/>
+
+                <apex:actionRegion >
+                    <b>Level</b>
+                        <apex:inputField id="d7" label="Level" value="{!contact.Level__c}" required="true"/><br/>
+                    <b>Primary Address Type</b>
+                         <apex:inputField id="d8" label="Primary Address Type" value="{!contact.npe01__Primary_Address_Type__c}" required="true"/>
+                        <!--<apex:actionSupport event="onchange" rerender="b" status="status"/>-->
+                    <!--</apex:inputField>-->
+                </apex:actionRegion>
+
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save" onclick="On()" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+
+    <apex:includeScript value="/soap/ajax/35.0/connection.js" />
+    <script type="text/javascript">
+        function On()
+        {
+            if(document.getElementById("{!$Component.a.b.c.d1}").value==''){
+                document.getElementById("{!$Component.a.b.c.d1}").style='background:red';
+            }
+            if(document.getElementById("{!$Component.a.b.c.d2}").value==''){
+                document.getElementById("{!$Component.a.b.c.d2}").style='background:red';
+            }
+            if(document.getElementById("{!$Component.a.b.c.d3}").value==''){
+                document.getElementById("{!$Component.a.b.c.d3}").style='background:red';
+            }
+            if(document.getElementById("{!$Component.a.b.c.d4}").value==''){
+                document.getElementById("{!$Component.a.b.c.d4}").style='background:red';
+            }
+            if(document.getElementById("{!$Component.a.b.c.d5}").value==''){
+                document.getElementById("{!$Component.a.b.c.d5}").style='background:red';
+            }
+             if(document.getElementById("{!$Component.a.b.c.d6}").value==''){
+                document.getElementById("{!$Component.a.b.c.d6}").style='background:red';
+            }
+             if(document.getElementById("{!$Component.a.b.c.d7}").value==''){
+                 document.getElementById("{!$Component.a.b.c.d7}").style='background:red';
+             }
+             if(document.getElementById("{!$Component.a.b.c.d8}").value==''){
+                 document.getElementById("{!$Component.a.b.c.d8}").style='background:red';
+             }
+        }
+        function OnClickField()
+        {
+            //window.top.location.reload();-->
+        }
+    </script>
+</apex:page>
+
+<!--<apex:form id="a">-->
+<!--<apex:pageBlock id="b" title="Contact Page" mode="edit">-->
+<!--<apex:pageBlockSection id="c" title="New Contact" columns="2">-->
+<!--<apex:input type="text" id="d1" label="Last Name" value="{!lastName}" required="true"/>-->
+<!--<apex:input type="email"  id="d2" label="Email" value="{!em}" required="true"/>-->
+<!--<apex:input type="tel"  id="d3" label="Phone" value="{!phone}" required="true"/>-->
+<!--<apex:input type="text" id="d4" label="Title" value="{!title}" required="true"/>-->
+
+<!--<apex:selectList label="Lead Source" size="1" required="true" >-->
+<!--<apex:selectOption itemValue="Web" value="{!leadSource}" itemLabel="Web"/>-->
+<!--<apex:selectOption itemValue="PhoneInquiry" value="{!leadSource}" itemLabel="Phone Inquiry"/>-->
+<!--<apex:selectOption itemValue="PhoneInquiry" value="{!leadSource}" itemLabel="Phone Inquiry"/>-->
+<!--<apex:selectOption itemValue="PhoneInquiry" value="{!leadSource}" itemLabel="Partner Referral"/>-->
+<!--<apex:selectOption itemValue="PhoneInquiry" value="{!leadSource}" itemLabel="Purchased List"/>-->
+<!--<apex:selectOption itemValue="PhoneInquiry" value="{!leadSource}" itemLabel="Other"/>-->
+<!--</apex:selectList>-->
+
+<!--&lt;!&ndash;<apex:inputField id="d5" value="{!contact.LeadSource}" required="true"/>&ndash;&gt;-->
+<!--&lt;!&ndash;<apex:inputField id="d6" value="{!contact.npe01__PreferredPhone__c}" required="true"/>&ndash;&gt;-->
+<!--</apex:pageBlockSection>-->
+<!--<apex:pageBlockButtons >-->
+<!--<apex:commandButton action="{!sav}" value="Save" onclick="On()" />-->
+<!--</apex:pageBlockButtons>-->
+<!--</apex:pageBlock>-->
+<!--</apex:form>-->

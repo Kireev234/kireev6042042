@@ -1,0 +1,10 @@
+<!--
+ - Created by akireyeu on 07.10.2019.
+ -->
+
+<aura:event type="COMPONENT" description="CompEvent" access="global">
+    <!--<aura:attribute name="test" type="String"/>-->
+    <aura:attribute name="grey" type="Boolean"/>
+    <aura:attribute name="blue" type="Boolean"/>
+    <aura:attribute name="orange" type="Boolean"/>
+</aura:event>

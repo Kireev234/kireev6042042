@@ -1,0 +1,21 @@
+<!--
+ - Created by ALEX on 25.05.2019.
+ -->
+
+<aura:component description="SelectObject" controller="MyControllerSelectObject">
+
+    <aura:attribute name="objects" type="Object[]"/>
+
+    <aura:handler  name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <aura:registerEvent name="myComponentEvent" type="c:componentEvent"/>
+    <aura:registerEvent name="myCmp" type="c:ComponentEventTableTruth"/>
+
+    <lightning:select aura:id="a_opt" name="select" label="Select Object" onchange="{! c.fireMyComponentEvent}">
+        <option value="None" text="---Select Object---"></option>
+        <aura:iteration items="{!v.objects}" var="object">
+            <option value="{!object.apiName}" text="{!object.label}"></option>
+        </aura:iteration>
+    </lightning:select>
+
+</aura:component>

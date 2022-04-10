@@ -1,0 +1,12 @@
+<!--
+ - Created by akireyeu on 15.10.2019.
+ -->
+
+<aura:component description="MainMainComponent">
+
+    <aura:handler name="myCompEventTest" event="c:compEvent" action="{!c.handleBubbledEvent}" />
+    <aura:handler name="myCompEventTest" event="c:compEvent" action="{!c.handleCapturedEvent}" phase="capture" />
+
+    <c:MainComp aura:id="MainComp"/>
+
+</aura:component>

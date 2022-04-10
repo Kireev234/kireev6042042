@@ -1,0 +1,94 @@
+<!--
+ - Created by akireyeu on 07.10.2019.
+ -->
+
+<aura:component description="MainComp" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <!--<aura:method name="sampleMethod1" action="{!c.handleBubbledEvent}" access="global">-->
+        <!--<aura:attribute name="grey" type="Boolean" />-->
+        <!--<aura:attribute name="blue" type="Boolean" />-->
+        <!--<aura:attribute name="orange" type="Boolean" />-->
+    <!--</aura:method>-->
+    <!--<aura:method name="sampleMethod2" action="{!c.handleCapturedEvent}" access="global">-->
+        <!--<aura:attribute name="grey" type="Boolean" />-->
+        <!--<aura:attribute name="blue" type="Boolean" />-->
+    <!--</aura:method>-->
+
+    <aura:attribute name="messageFromAppEvent" type="String"/>
+    <aura:attribute name="messageFromCompEvent" type="String"/>
+    <aura:attribute name="messageFromEvent" type="String"/>
+
+    <aura:attribute name="numEvents1" type="Integer" default="0"/>
+    <aura:attribute name="numEvents2" type="Integer" default="0"/>
+    <aura:attribute name="numEvents3" type="Integer" default="0"/>
+    <aura:attribute name="numEvents4" type="Integer" default="0"/>
+    <aura:attribute name="numEvents5" type="Integer" default="0"/>
+    <aura:attribute name="numEvents6" type="Integer" default="0"/>
+    <aura:attribute name="numEvents7" type="Integer" default="0"/>
+    <aura:attribute name="grey" type ="Boolean" default="true"/>
+    <aura:attribute name="orange" type ="Boolean" default="false"/>
+    <aura:attribute name="blue" type ="Boolean" default="false"/>
+
+    <!--<aura:handler  name="init" action="{!c.doInit}" value="{!this}"/>-->
+
+    <aura:registerEvent name="myCompEventTest" type="c:compEvent"/>
+    <aura:registerEvent name="AppEvent" type="c:appEvent"/>
+
+    <aura:handler name="myCompEventTest" event="c:compEvent" action="{!c.handleBubbledEvent}" />
+    <aura:handler name="myCompEventTest" event="c:compEvent" action="{!c.handleCapturedEvent}" phase="capture" />
+
+    <aura:handler  event="c:appEvent" action="{!c.appHandleBubbledEvent}" phase="bubble" />
+    <aura:handler  event="c:appEvent" action="{!c.appHandleCapturedEvent}" phase="capture" />
+    <aura:handler  event="c:appEvent" action="{!c.appHandleDefaultEvent}"  />
+
+<div class="container">
+    <div class="containerItemsL">
+        <div class="itemsL2"><div class="circleTop" style="background: orange"></div>
+            <div style="width: 150px">Application Event</div></div>
+        <div class="itemsL2"><div class="circleTop" style="background: #6A5ACD"></div>
+            <div style="width: 150px">Component Event</div></div>
+        <div class="itemsL2"><div class="circleTop" style="background: #F0F8FF"></div>
+            <div style="width: 150px">No Handled Event</div></div></div>
+
+
+    <div class="itemsM"> <aura:if isTrue="{!v.grey}">
+        <div class="circleT"> </div>
+    </aura:if>
+        <aura:if isTrue="{!v.orange}">
+            <div class="circleT" style="background:orange"> </div>
+        </aura:if>
+        <aura:if isTrue="{!v.blue}">
+            <div class="circleT" style="background: #6A5ACD"> </div>
+        </aura:if>
+        <div >
+            <div class="grey">{!v.numEvents5}</div>
+            <div class="orange">{!v.numEvents3} </div>
+            <div class="blue">{!v.numEvents4} </div>
+        </div>
+        <div class="oval">
+            <div>
+                <p style="color:#FFFFFF; text-align: center">Main Component</p><br/>
+                <lightning:button class="buttonApp" label="App Evt" onclick="{! c.fireApplicationEvent }"/>
+                <lightning:button class="buttonCmp" label="Cmp Evt" onclick="{! c.fireComponentEvent }"/>
+            </div>
+        </div></div>
+    <div class="containerItemsL">
+        <div class="itemsL2"><div style="width: 120px">Default Stage</div><div class="greyTop" style="background: #F0F8FF"></div></div>
+        <div class="itemsL2"><div style="width: 120px">Bubble Stage</div><div class="greyTop" style="background: #F4A460"></div></div>
+        <div class="itemsL2"><div style="width: 120px">Capture Stage</div><div class="greyTop" style="background: #6495ED"></div></div>
+    </div>
+
+</div>
+    <div class="containerArrow">
+        <div class="arrowLM">
+            <img src="{!$Resource.ArrowL}"/>
+        </div>
+        <div class="arrowRM">
+            <img src="{!$Resource.ArrowR}"/>
+        </div>
+    </div>
+<div class="containerD">
+    <div ><c:CMP1 aura:id="CMP1"/></div>
+    <div ><c:CMP2 aura:id="CMP2"/></div>
+</div>
+
+</aura:component>

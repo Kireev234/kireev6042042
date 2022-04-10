@@ -1,0 +1,28 @@
+<!--
+ - Created by alexanderkireev on 5/5/2020.
+ -->
+
+<apex:page id="VSforAuraAndLWC">
+    <apex:includeLightning />
+
+    <div id="LcDisplayId"></div>
+
+    <script>
+        // Here 'VfApp' Is Lightning Application Name
+        $Lightning.use("c:AppMainComponent", function() {
+            /* 'LcForVf' is Lightning Component Name which we are Displaying In Vf Page
+             * syntax for create lightning component dynamically :
+             * $Lightning.createComponent(String type, Object attributes, String locator, function callback) */
+            $Lightning.createComponent("c:mainLWC",
+                {
+                    // Set Lightning Component Attributes Property before creating Lightning Component In Visualforce page
+                },
+                "LcDisplayId",
+                function(component) {
+                    // create component Callback, Lightning Component has been Created,
+                    // Now you can set more lightning Component attributes here,
+                    // and do more cool stuff here
+                });
+        });
+    </script>
+</apex:page>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>FlexPricer App Settings</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>crms11__Apply_Volume_Discount_To_Derived_Units__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Applies volume discount to derived units based on the Quantity Rate multipliers.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Applies volume discount to derived units based on the Quantity Rate multipliers.</inlineHelpText>
+        <label>Apply Volume Discount To Derived Units</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>crms11__Default_Quantity_Rate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Default Quantity Rate record which will be used when product is added to opportunity but does not have quantity rate added. If product has a default quantity rate it will override this value.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Default Quantity Rate.</inlineHelpText>
+        <label>Default Quantity Rate</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>crms11__Default_Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Default Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>crms11__Disable_Cloning_Product_Related_List__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Disable Cloning Product Related List</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>crms11__Disable_Contribution_Calculation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Disable Contribution Calculation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>crms11__Disable_Quote_Sync_Triggers__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Disable Quote Sync Triggers</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>crms11__Disable_Volume_Discount_Validations__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Is set to true validation triggers to check for duplicate volume discount records are disabled.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is set to true validation triggers to check for duplicate volume discount records are disabled.</inlineHelpText>
+        <label>Disable Volume Discount Validations</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>crms11__Generate_quote_page_name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The page to be used to render as PDF in order to generate quote.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The page to be used to render as PDF in order to generate quote.</inlineHelpText>
+        <label>Quote Template URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>crms11__Manager_Discount_Product__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Manager Discount Product</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>crms11__Maximum_Rapid_Quantity_Options__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Maximum Rapid Quantity Options</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>crms11__User_Discount_Product__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>User Discount Product</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>FlexPricer Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

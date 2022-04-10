@@ -1,0 +1,24 @@
+<!--
+ - Created by akireyeu on 04.02.2020.
+ -->
+
+<aura:component description="ArtTaskMainComp"
+                controller="ArtTaskProductApex"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes"
+                access="global">
+
+    <aura:attribute name="isOpenModalBox" type="Boolean" default="false"/>
+    <aura:attribute name="productId" type="String"/>
+
+    <aura:handler name="myEvent" event="c:ArtTaskEvent" action="{!c.handleEvent}" />
+
+    <div>
+        <c:ArtTaskProductHeader/>
+    </div>
+    <div>
+        <c:ArtTaskIterationProd aura:id="iteration"/>
+    </div>
+   <div>
+       <c:ArtTaskModalBox isOpenModalBox="{!v.isOpenModalBox}" aura:id="modalBox" />
+   </div>
+</aura:component>

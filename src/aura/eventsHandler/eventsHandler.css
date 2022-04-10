@@ -1,0 +1,9 @@
+/**
+ * Created by akireyeu on 24.06.2019.
+ */
+.cEventsHandler {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}

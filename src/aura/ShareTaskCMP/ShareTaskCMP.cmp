@@ -1,0 +1,23 @@
+<!--
+ - Created by akireyeu on 20.02.2020.
+ -->
+
+<aura:component description="ShareTaskCMP">
+
+    <aura:attribute name="object" type="Object"/>
+
+    <aura:registerEvent name="myEvent" type="c:ArtTaskEvent"/>
+
+    <div class="container">
+        <div>
+                {!v.object.Name}
+        </div>
+        <div>
+                {!v.object.OwnerId}
+        </div>
+        <div>
+            <ui:inputCheckbox aura:id="checkbox" change="{!c.onCheck}"/>
+        </div>
+    </div>
+
+</aura:component>

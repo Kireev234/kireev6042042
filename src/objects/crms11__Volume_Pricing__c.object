@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>FlexPricer Volume Price records manage data relating to volume and tiered pricing of Products.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>crms11__Discount_Percentage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The discount to apply when the minimum quantity is reached (volume pricing) or exceeded (tiered pricing).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The discount to apply when the minimum quantity is reached (volume pricing) or exceeded (tiered pricing).</inlineHelpText>
+        <label>Discount Percentage</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>crms11__Flat_Rate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The new sales price of this product when the minimum quantity is reached (volume pricing) or exceeded (tiered pricing).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The new sales price of this product when the minimum quantity is reached (volume pricing) or exceeded (tiered pricing).</inlineHelpText>
+        <label>Fixed Volume Rate</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>crms11__Minimum_Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>For volume pricing, the lowest quantity to achieve the discount. For tiered pricing, the quantity above which the discount will apply.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For volume pricing, the lowest quantity to achieve the discount. For tiered pricing, the quantity above which the discount will apply.</inlineHelpText>
+        <label>Minimum Quantity</label>
+        <precision>11</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>crms11__PriceBook__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Price Book</label>
+        <referenceTo>Pricebook2</referenceTo>
+        <relationshipLabel>Volume Prices</relationshipLabel>
+        <relationshipName>Volume_Prices</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>crms11__Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipName>Volume_Pricings</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>crms11__Use_Flat_Volume_Rate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>An internal FlexPricer indicator to advise the system to replace the Sales Price with the Fixed Volume Rate not adjust the Sales Price by the Discount Percentage.</description>
+        <externalId>false</externalId>
+        <formula>!ISBLANK(crms11__Flat_Rate__c) &amp;&amp;  ISBLANK(crms11__Discount_Percentage__c)</formula>
+        <inlineHelpText>An internal FlexPricer indicator to advise the system to replace the Sales Price with the Fixed Volume Rate not adjust the Sales Price by the Discount Percentage.</inlineHelpText>
+        <label>Use Fixed Volume Rate</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>crms11__Volume_Discount_Validation_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Unique field that prevents same volume discount.</description>
+        <externalId>false</externalId>
+        <label>Volume Discount Validation Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Volume Price</label>
+    <listViews>
+        <fullName>crms11__All_Volume_Prices</fullName>
+        <columns>NAME</columns>
+        <columns>crms11__Minimum_Quantity__c</columns>
+        <columns>crms11__Product__c</columns>
+        <columns>crms11__Discount_Percentage__c</columns>
+        <columns>crms11__Flat_Rate__c</columns>
+        <columns>crms11__Use_Flat_Volume_Rate__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Volume Prices</label>
+    </listViews>
+    <nameField>
+        <displayFormat>VPID-{00000}</displayFormat>
+        <label>Volume Price ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Volume Prices</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>crms11__Product__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>crms11__Minimum_Quantity__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>crms11__Discount_Percentage__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>crms11__Product__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>crms11__Minimum_Quantity__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>crms11__Discount_Percentage__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>crms11__Product__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>crms11__Minimum_Quantity__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>crms11__Discount_Percentage__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>crms11__Product__c</searchFilterFields>
+        <searchFilterFields>crms11__Minimum_Quantity__c</searchFilterFields>
+        <searchFilterFields>crms11__Discount_Percentage__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>crms11__Apply_one_Pricing_at_a_time</fullName>
+        <active>true</active>
+        <errorConditionFormula>!ISBLANK(crms11__Flat_Rate__c) &amp;&amp;
+!ISBLANK(crms11__Discount_Percentage__c )</errorConditionFormula>
+        <errorMessage>Only one pricing is supported at a time.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>crms11__At_least_one_Pricing_Should_be_Enable</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK(crms11__Flat_Rate__c) &amp;&amp; 
+ISBLANK(crms11__Discount_Percentage__c)</errorConditionFormula>
+        <errorMessage>At least one Pricing should be applicable</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

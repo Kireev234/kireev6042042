@@ -1,0 +1,20 @@
+<!--
+ - Created by AlexanderKireev on 3/27/2020.
+ -->
+
+<!-- Get Object Fields -->
+<template>
+    <lightning-dual-listbox name="Fields"
+                            label="Select Fields"
+                            source-label="Available"
+                            selected-label="Selected"
+                            field-level-help="Select your fields"
+                            options={options}
+                            onchange={handleChange}>
+
+    </lightning-dual-listbox>
+<!--    <div class="slds-box" >-->
+<!--        <p>Selected values are: {selected}</p>-->
+<!--    </div>-->
+<!--    {objectapi}-->
+</template>

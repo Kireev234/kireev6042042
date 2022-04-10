@@ -1,0 +1,69 @@
+<!--
+ - Created by akireyeu on 24.06.2019.
+ -->
+
+<aura:component description="Component1">
+
+    <aura:method name="sampleMethod1" action="{!c.handleBubbledEvent}" access="global">
+        <aura:attribute name="test" type="String" />
+    </aura:method>
+    <aura:method name="sampleMethod2" action="{!c.handleCapturedEvent}" access="global">
+        <aura:attribute name="test" type="String" />
+    </aura:method>
+
+    <!--<aura:method name="sampleMethod3" action="{!c.appHandleBubbledEvent}" access="global">-->
+        <!--<aura:attribute name="test" type="String" />-->
+    <!--</aura:method>-->
+    <!--<aura:method name="sampleMethod4" action="{!c.appHandleCapturedEvent}" access="global">-->
+        <!--<aura:attribute name="test" type="String" />-->
+    <!--</aura:method>-->
+    <!--<aura:method name="sampleMethod5" action="{!c.appHandleDefaultEvent}" access="global">-->
+        <!--<aura:attribute name="test" type="String" />-->
+    <!--</aura:method>-->
+
+    <aura:attribute name="messageFromAppEvent" type="String"/>
+    <aura:attribute name="messageFromCompEvent" type="String"/>
+
+    <aura:attribute name="numEvents1" type="Integer" default="0"/>
+    <aura:attribute name="numEvents2" type="Integer" default="0"/>
+    <aura:attribute name="numEvents3" type="Integer" default="0"/>
+    <aura:attribute name="numEvents4" type="Integer" default="0"/>
+    <aura:attribute name="numEvents5" type="Integer" default="0"/>
+    <aura:attribute name="numEvents6" type="Integer" default="0"/>
+    <aura:attribute name="numEvents7" type="Integer" default="0"/>
+
+    <!--<aura:handler  name="init" action="{!c.doInit}" value="{!this}"/>-->
+
+    <aura:registerEvent name="myCompEventTest" type="c:CompEventTest"/>
+    <aura:registerEvent name="appEventTest" type="c:AppEventTest"/>
+
+    <aura:handler name="myCompEventTest" event="c:CompEventTest" action="{!c.handleBubbledEvent}" />
+    <aura:handler name="myCompEventTest" event="c:CompEventTest" action="{!c.handleCapturedEvent}" phase="capture" />
+
+    <aura:handler  event="c:AppEventTest" action="{!c.appHandleBubbledEvent}" phase="bubble" />
+    <aura:handler  event="c:AppEventTest" action="{!c.appHandleCapturedEvent}" phase="capture" />
+    <aura:handler  event="c:AppEventTest" action="{!c.appHandleDefaultEvent}"  />
+
+    <lightning:card title="Component 1">
+
+        <div>
+
+            <p>{!v.messageFromAppEvent} Capture Stage: {!v.numEvents4}</p>
+            <p>{!v.messageFromAppEvent} Bubble Stage: {!v.numEvents3}</p>
+            <p>{!v.messageFromAppEvent} Default Stage: {!v.numEvents5}</p>
+            <p>{!v.messageFromCompEvent} Capture Stage: {!v.numEvents7}</p>
+            <p>{!v.messageFromCompEvent} Bubble Stage: {!v.numEvents6}</p>
+
+        </div>
+
+        <div  class="container" style="margin: 20px;">
+            <lightning:button label="App Event" onclick="{! c.fireApplicationEvent }"/>
+        </div>
+
+        <div  class="container" style="margin: 20px;">
+            <lightning:button label="Cmp Event" onclick="{! c.fireComponentEvent }"/>
+        </div>
+
+    </lightning:card >
+
+</aura:component>

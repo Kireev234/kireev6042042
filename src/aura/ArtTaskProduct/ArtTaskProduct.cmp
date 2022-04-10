@@ -1,0 +1,372 @@
+<!--
+ - Created by akireyeu on 23.12.2019.
+ -->
+
+<aura:component description="ArtTaskProduct" controller="ArtTaskProductApex" implements="force:appHostable,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:attribute name="productListFull" type="Product__c[]" />
+    <aura:attribute name="productList" type="Product__c[]" />
+    <aura:attribute name="paginationList" type="Product__c"/>
+    <aura:attribute name="paginationListId" type="String"/>
+    <aura:attribute name="reviewListSel" type="Review__c[]" />
+    <aura:attribute name="reviewList" type="Review__c[]" />
+    <aura:attribute name="review" type="Review__c" />
+    <aura:attribute name="reviewId" type="String" />
+    <aura:attribute name="pageSize" type="Integer" default="5"/>
+    <aura:attribute name="pageSizeRev" type="Integer" default="5"/>
+    <aura:attribute name="end" type="Integer"/>
+    <aura:attribute name="start" type="Integer"/>
+    <aura:attribute name="endRev" type="Integer" default="4"/>
+    <aura:attribute name="startRev" type="Integer"/>
+    <aura:attribute name="numLike" type="Integer"/>
+    <aura:attribute name="numDislike" type="Integer"/>
+    <aura:attribute name="numLikeRev" type="Integer"/>
+    <aura:attribute name="index" type="Integer"/>
+    <aura:attribute name="indexRev" type="Integer"/>
+    <aura:attribute name="numDislikeRev" type="Integer"/>
+    <aura:attribute name="num" type="Integer"/>
+    <aura:attribute name="numSize" type="Integer"/>
+    <aura:attribute name="numRev" type="Integer" default="1"/>
+    <aura:attribute name="numSizeRev" type="Integer"/>
+    <aura:attribute name="sizeReview" type="Integer"/>
+    <aura:attribute name="truf" type="Boolean" default="false"/>
+    <aura:attribute name="sort" type="Boolean" default="false"/>
+    <aura:attribute name="sortR" type="Boolean" default="false"/>
+    <aura:attribute name="sortV" type="Boolean" default="false"/>
+    <aura:attribute name="sortL" type="Boolean" default="false"/>
+    <aura:attribute name="sortD" type="Boolean" default="false"/>
+    <aura:attribute name="sortVR" type="Boolean" default="false"/>
+    <aura:attribute name="sortLR" type="Boolean" default="false"/>
+    <aura:attribute name="sortDR" type="Boolean" default="false"/>
+    <aura:attribute name="sortRev" type="Boolean" default="false"/>
+    <aura:attribute name="sortRRev" type="Boolean" default="false"/>
+    <aura:attribute name="sortVRev" type="Boolean" default="false"/>
+    <aura:attribute name="sortLRev" type="Boolean" default="false"/>
+    <aura:attribute name="sortDRev" type="Boolean" default="false"/>
+    <aura:attribute name="sortVRRev" type="Boolean" default="false"/>
+    <aura:attribute name="sortLRRev" type="Boolean" default="false"/>
+    <aura:attribute name="sortDRRev" type="Boolean" default="false"/>
+    <aura:attribute name="trufView" type="Boolean" default="true"/>
+    <aura:attribute name="trufViewReview" type="Boolean" default="true"/>
+    <aura:attribute name="trufLike" type="Boolean" default="true"/>
+    <aura:attribute name="trufButton" type="Boolean" default="true"/>
+    <aura:attribute name="trufButtonRev" type="Boolean" default="true"/>
+    <aura:attribute name="trufButtonLReview" type="Boolean" default="false"/>
+    <aura:attribute name="trufButtonF" type="Boolean" default="true"/>
+    <aura:attribute name="trufButtonL" type="Boolean" default="true"/>
+    <aura:attribute name="trufButtonLRev" type="Boolean" default="true"/>
+    <aura:attribute name="trufButton2" type="Boolean" default="true"/>
+    <aura:attribute name="trufRev" type="Boolean" default="false"/>
+    <aura:attribute name="isOpen" type="Boolean" default="false"/>
+    <aura:attribute name="isOpenTable" type="Boolean" default="false"/>
+    <aura:attribute name="isO" type="Boolean" default="false"/>
+    <aura:attribute name="liked" default="false" type="Boolean" />
+    <aura:attribute name="disliked" default="false" type="Boolean" />
+    <aura:attribute name="likedRev" default="false" type="Boolean" />
+    <aura:attribute name="dislikedRev" default="false" type="Boolean" />
+    <aura:attribute name="sesId" type="String"/>
+
+
+<div class="c-container">
+    <div class="container">
+        <div>
+        Show Entries
+        <ui:inputSelect class="entries" aura:id="records" change="{!c.onSelectChange}">
+            <ui:inputSelectOption text="5" value="5"/>
+            <ui:inputSelectOption text="10" value="10"/>
+            <ui:inputSelectOption text="20" value="20"/>
+            <ui:inputSelectOption text="30" value="30"/>
+        </ui:inputSelect><br/>
+        </div>
+        <div class="icons">
+            <div>
+                <b>Product name </b>
+                <lightning:buttonIcon iconName="utility:arrowdown"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByName }" />
+                <lightning:buttonIcon iconName="utility:arrowup"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByNameRevers }" />
+            </div>
+            <div class="iconsIn">
+                <div>
+                    <lightning:icon iconName="utility:preview" size="xx-small"/>
+                </div>
+                <div style="margin-left: 5px; width: 30px">
+                    <lightning:buttonIcon iconName="utility:arrowdown"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByView }" />
+                    <lightning:buttonIcon iconName="utility:arrowup"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByViewR }" />
+                </div>
+                <div style="margin-left: 15px">
+                    <lightning:icon iconName="utility:like" size="xx-small"/>
+                </div>
+                <div style="margin-left: 5px; width: 30px">
+                    <lightning:buttonIcon iconName="utility:arrowdown"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByLike }" />
+                    <lightning:buttonIcon iconName="utility:arrowup"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByLikeR }" />
+                </div>
+                <div style="margin-left: 15px">
+                    <lightning:icon iconName="utility:dislike" size="xx-small"/>
+                </div>
+                <div style="margin-left: 5px; width: 30px">
+                    <lightning:buttonIcon iconName="utility:arrowdown"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByDislike }" />
+                    <lightning:buttonIcon iconName="utility:arrowup"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByDislikeR }" />
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <aura:iteration items="{!v.productList}" var="item" indexVar="filterIndex">
+                <div class="icons">
+                    <div>
+                        <lightning:buttonIcon iconName="utility:down" size="medium" disabled="{!v.trufView == false}" value="{!filterIndex}"
+                                              variant="bare" alternativeText="View More" onclick="{! c.handleClick }"/>
+                        {!item.Name}
+                    </div>
+                    <div class="iconsIn">
+                        <div>
+                            <lightning:icon iconName="utility:preview" size="xx-small"/>
+                        </div>
+                        <div style="margin-left: 5px; width: 30px">
+                                {!item.Views__c}
+                            </div>
+                        <div style="margin-left: 15px">
+                            <lightning:icon iconName="utility:like" size="xx-small"/>
+                        </div>
+                        <div style="margin-left: 5px; width: 30px">
+                                 {!item.Like__c}
+                             </div>
+                        <div style="margin-left: 15px">
+                            <lightning:icon iconName="utility:dislike" size="xx-small"/>
+                        </div>
+                        <div style="margin-left: 5px; width: 30px">
+                               {!item.Dislike__c}
+                            </div>
+                    </div>
+                </div>
+            </aura:iteration>
+        </div>
+        <div>
+            <aura:if isTrue="{!v.truf}">
+                <!--{!item.completed__c == v.completed}-->
+                <div style="border-top: 1px solid #d8dde6; margin: 20px 0"></div>
+                <div>
+                    <b>Product name</b><br/>
+                    <div class="icons">
+                        <div>
+                            {!v.paginationList.Name}
+                        </div>
+                        <div class="iconsIn">
+                            <div>
+                                <lightning:icon iconName="utility:preview" size="xx-small"/>
+                            </div>
+                            <div style="margin-left: 5px; width: 30px">
+                                {!v.paginationList.Views__c}
+                            </div>
+                            <div style="margin-left: 15px">
+                                <lightning:icon iconName="utility:like" size="xx-small"/>
+                            </div>
+                            <div style="margin-left: 5px; width: 30px">
+                                 {!v.paginationList.Like__c}
+                             </div>
+                            <div style="margin-left: 15px">
+                                <lightning:icon iconName="utility:dislike" size="xx-small"/>
+                            </div>
+                            <div style="margin-left: 5px; width: 30px">
+                               {!v.paginationList.Dislike__c}
+                            </div>
+                        </div>
+                    </div>
+                    <!--<b>Product name</b><br/>-->
+                    <!--{!v.paginationList.Name}<br/>-->
+                    <b>Description</b><br/>
+                    {!v.paginationList.Description__c}<br/>
+                    <div class="icons">
+                        <div role="button" id="POSTCODE" onclick="{! c.showReview }"  >
+                            <a><b>Reviews </b></a>
+                            {!v.sizeReview}
+                        </div>
+                        <div class="iconsIn">
+                            <lightning:buttonIconStateful iconName="utility:like"  selected="{! v.liked }" disabled="{!v.trufLike == false}"  onclick="{! c.handleLike }" alternativeText="Like" class="likeDislike" />
+                            <lightning:buttonIconStateful iconName="utility:dislike" selected="{! v.disliked }" disabled="{!v.trufLike == false}" onclick="{! c.handleDislike }" alternativeText="Dislike" class="likeDislike" />
+                        </div>
+                    </div>
+                </div>
+            </aura:if>
+        </div>
+    </div>
+    <div>
+    <aura:if isTrue="{!v.trufButton}">
+
+            <div class="parent-wrapper">
+                <lightning:button label="First"  disabled="{!v.start == 0}"  onclick="{!c.first3}" />
+                <lightning:button label="Previous" disabled="{!v.start == 0}" onclick="{!c.previous3}" />
+                <lightning:input type="number" disabled="{!v.trufButton == false}" aura:id="number" min="1" max="{!v.numSize}" placeholder="{!v.num}" onchange="{!c.CheckLength}" class="custom" />
+                <lightning:button label="Next" disabled="{!v.trufButtonL == false}" onclick="{!c.next3}" />
+                <lightning:button label="Last" disabled="{!v.trufButtonL == false}" onclick="{!c.last3}" />
+            </div>
+    </aura:if>
+    </div>
+</div>
+
+    <aura:if isTrue="{!v.isOpenTable}">
+
+        <!--###### MODAL BOX Start######-->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- ###### MODAL BOX HEADER Start ######-->
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModelTable }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Reviews</h2>
+                </header>
+                <!--###### MODAL BOX BODY Part Start######-->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="icons">
+                        <div class="icons-into">
+                            <div style="margin-right: 5px">
+                                Show entries
+                            </div>
+                            <div>
+                                <ui:inputSelect class="entries" aura:id="recor" change="{!c.onSelectChangeRev}">
+                                    <ui:inputSelectOption text="5" value="5"/>
+                                    <ui:inputSelectOption text="10" value="10"/>
+                                    <ui:inputSelectOption text="20" value="20"/>
+                                    <ui:inputSelectOption text="30" value="30"/>
+                                </ui:inputSelect>
+                            </div>
+                        </div>
+                        <!--<div class="icons-into">-->
+                            <!--<div style="margin-right: 5px">-->
+                                <!--Search-->
+                            <!--</div>-->
+                            <!--<div>-->
+                                <!--<ui:inputText aura:id="input1" change="{!c.searchKeyChange2}" required="true"></ui:inputText>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+
+                    <div class="icons">
+                        <div>
+                            <b>Name </b>
+                            <lightning:buttonIcon iconName="utility:arrowdown"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByNameRev }" />
+                            <lightning:buttonIcon iconName="utility:arrowup"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByNameReversRev }" />
+                        </div>
+                        <div class="iconsIn">
+                            <div>
+                                <lightning:icon iconName="utility:preview" size="xx-small"/>
+                            </div>
+                            <div style="margin-left: 5px; width: 30px">
+                                <lightning:buttonIcon iconName="utility:arrowdown"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByViewRev }" />
+                                <lightning:buttonIcon iconName="utility:arrowup"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByViewRRev }" />
+                            </div>
+                            <div style="margin-left: 15px">
+                                <lightning:icon iconName="utility:like" size="xx-small"/>
+                            </div>
+                            <div style="margin-left: 5px; width: 30px">
+                                <lightning:buttonIcon iconName="utility:arrowdown"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByLikeRev }" />
+                                <lightning:buttonIcon iconName="utility:arrowup"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByLikeRRev }" />
+                            </div>
+                            <div style="margin-left: 15px">
+                                <lightning:icon iconName="utility:dislike" size="xx-small"/>
+                            </div>
+                            <div style="margin-left: 5px; width: 30px">
+                                <lightning:buttonIcon iconName="utility:arrowdown"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByDislikeRev }" />
+                                <lightning:buttonIcon iconName="utility:arrowup"  size="x-small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByDislikeRRev }" />
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <aura:iteration items="{!v.reviewListSel}" var="item" indexVar="filterIndex">
+                            <div class="icons">
+                                <div>
+                                    <lightning:buttonIcon iconName="utility:down" size="medium" disabled="{!v.trufView == false}" value="{!filterIndex}"
+                                                          variant="bare" alternativeText="View More" onclick="{!c.handleClickRev}"/>
+                                    {!item.Name}
+                                </div>
+                                <div class="iconsIn">
+                                    <div>
+                                        <lightning:icon iconName="utility:preview" size="xx-small"/>
+                                    </div>
+                                    <div style="margin-left: 5px; width: 30px">
+                                {!item.Views__c}
+                            </div>
+                                    <div style="margin-left: 15px">
+                                        <lightning:icon iconName="utility:like" size="xx-small"/>
+                                    </div>
+                                    <div style="margin-left: 5px; width: 30px">
+                                 {!item.Like__c}
+                             </div>
+                                    <div style="margin-left: 15px">
+                                        <lightning:icon iconName="utility:dislike" size="xx-small"/>
+                                    </div>
+                                    <div style="margin-left: 5px; width: 30px">
+                               {!item.Dislike__c}
+                            </div>
+                                </div>
+                            </div>
+                        </aura:iteration>
+                    </div>
+
+
+                    <aura:if isTrue="{!v.trufButtonRev}">
+                        <div style="margin: 20px 0">
+                            <lightning:button label="First"  disabled="{!v.startRev == 0}"  onclick="{!c.first3Rev}" />
+                            <lightning:button label="Previous" disabled="{!v.startRev == 0}" onclick="{!c.previous3Rev}" />
+                            <lightning:input type="number"  aura:id="numberRev" min="1" max="{!v.numSizeRev}" placeholder="{!v.numRev}" onchange="{!c.CheckLengthRev}" class="custom" />
+                            <lightning:button label="Next" disabled="{!v.trufButtonLReview == false}" onclick="{!c.next3Rev}" />
+                            <lightning:button label="Last" disabled="{!v.trufButtonLReview == false}" onclick="{!c.last3Rev}" />
+                        </div>
+                    </aura:if>
+
+                    <aura:if isTrue="{!v.isO}">
+                        <div style="border-top: 1px solid #d8dde6; margin: 20px 0"></div>
+                        <div style="margin-bottom: 10px">
+                            <b>Name</b><br/>
+                            <div class="icons">
+                                <div>
+                                   {!v.review.Name}
+                                </div>
+                                <div class="iconsIn">
+                                    <div>
+                                        <lightning:icon iconName="utility:preview" size="xx-small"/>
+                                    </div>
+                                    <div style="margin-left: 5px; width: 30px">
+                                       {!v.review.Views__c}
+                                    </div>
+                                    <div style="margin-left: 15px">
+                                        <lightning:icon iconName="utility:like" size="xx-small"/>
+                                    </div>
+                                    <div style="margin-left: 5px; width: 30px">
+                                        {!v.review.Like__c}
+                                    </div>
+                                    <div style="margin-left: 15px">
+                                        <lightning:icon iconName="utility:dislike" size="xx-small"/>
+                                    </div>
+                                    <div style="margin-left: 5px; width: 30px">
+                                        {!v.review.Dislike__c}
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icons" style="align-items: flex-end">
+                            <div>
+                              <b>Description</b><br/>
+                               <ui:scrollerWrapper class="scrollerSize">
+                                  {!v.review.Description__c}
+                                </ui:scrollerWrapper>
+                            </div>
+                            <div class="iconsIn">
+                                <lightning:buttonIconStateful iconName="utility:like"  selected="{!v.likedRev}"   onclick="{!c.handleLikeRev}" alternativeText="Like" class="likeDislike" />
+                                <lightning:buttonIconStateful iconName="utility:dislike" selected="{!v.dislikedRev}"  onclick="{!c.handleDislikeRev}" alternativeText="Dislike" class="likeDislike" />
+                            </div>
+                        </div>
+                    </aura:if>
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start ######-->
+            </div>
+        </section>
+
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+
+    </aura:if>
+
+</aura:component>

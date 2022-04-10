@@ -1,0 +1,85 @@
+/**
+ * Created by akireyeu on 09.10.2019.
+ */
+.THIS .orange {
+    width: 35px;
+    height: 25px;
+    background: #F4A460;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+.THIS .blue {
+    width: 35px;
+    height: 25px;
+    background: #6495ED;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+.THIS .grey {
+    width: 35px;
+    height: 25px;
+    background: #F0F8FF;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+.THIS .circle {
+    width: 30px;
+    height: 30px;
+    background: #F0F8FF;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+    border: 1px solid black;
+
+}
+.THIS .rectangle {
+    width: 160px;
+    height: 90px;
+    background: #008000;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.THIS.container {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+.THIS .containerArrow {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+
+}
+.THIS .arrowL {
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 15px;
+    align-content: center;
+}
+.THIS .arrowR {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 80px;
+    align-content: center;
+}
+.THIS .arrow {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 38px;
+    align-content: center;
+}

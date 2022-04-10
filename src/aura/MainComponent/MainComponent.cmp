@@ -1,0 +1,42 @@
+<aura:component description="MainComponent" implements="force:appHostable,flexipage:availableForAllPageTypes" access="global">
+
+    <!--<aura:attribute type="String" name="selectedObject"/>-->
+    <!--<aura:attribute type="Object[]" name="displayFilds"/>-->
+    <aura:attribute type="Boolean" name="showPicList" default="false"/>
+
+    <aura:handler name="myComponentEvent" event="c:componentEvent" action="{!c.handleMyComponentEvent}"/>
+    <aura:handler name="myComponentEventTable" event="c:ComponentEventTable" action="{!c.handleMyComponentEventTable}"/>
+    <aura:handler name="myCmp" event="c:ComponentEventTableTruth" action="{!c.handleMyCmp}"/>
+
+    <div class="container" style="width:100%;">
+        <lightning:card>
+
+            <lightning:layout>
+                <div class="container" style="margin: 4px 20px; width:15%;">
+                    <c:SelectObject/>
+                </div>
+            <lightning:layout>
+
+            </lightning:layout>
+                <aura:if isTrue="{!v.showPicList}">
+                    <div class="container" style="width:80%;">
+                         <c:SelectFields aura:id="selectedField"/>
+                    </div>
+                </aura:if>
+            </lightning:layout>
+
+            <lightning:layout>
+                <div class="container" style="margin: 30px;">
+                    <c:DataTable aura:id="selectedTable"/>
+                </div>
+            </lightning:layout>
+
+            <lightning:layout>
+                <div class="container" style="margin: 30px;">
+                    <c:mainLWC/>
+                </div>
+            </lightning:layout>
+
+        </lightning:card>
+    </div>
+</aura:component>

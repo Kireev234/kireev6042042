@@ -1,0 +1,43 @@
+<!--
+ - Created by akireyeu on 29.01.2020.
+ -->
+
+<aura:component description="DynamicAccount" controller="GetAllAccount" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global">
+
+    <aura:attribute name="channel" type="String" />
+    <aura:attribute name="subscription" type="Map" />
+    <aura:attribute name="payload" type="Object" />
+    <aura:attribute name="listAccount" type="List" />
+    <aura:attribute name="myColumns" type="List"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    <lightning:empApi aura:id="empApi" />
+
+    <div style="margin-bottom: 10px">
+        <lightning:input aura:id="channel" label="Channel" name="channel" type="text" value="/data/AccountChangeEvent"/>
+    </div>
+    <div  style="margin-bottom: 10px">
+        <lightning:button label="Subscribe" onclick="{! c.subscribe2 }" />
+        <lightning:button label="Unsubscribe" onclick="{! c.unsubscribe2 }" />
+    </div>
+
+
+    <!--Channel  :{!v.channel}-->
+    <!--<aura:iteration items="{!v.listAccount}" var="item">-->
+            <!--&lt;!&ndash;<div>{!item.Name}</div>&ndash;&gt;-->
+        <!--<tr>-->
+            <!--<td>{!item.Name}</td>-->
+            <!--<td>{!item.Phone}</td>-->
+            <!--<td>{!item.Website}</td>-->
+        <!--</tr>-->
+    <!--</aura:iteration>-->
+
+    <lightning:datatable data="{! v.listAccount }"
+                         columns="{! v.myColumns }"
+                         keyField="id"
+                         hideCheckboxColumn="true"/>
+
+</aura:component>

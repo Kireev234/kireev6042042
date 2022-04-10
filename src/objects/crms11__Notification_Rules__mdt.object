@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Notification rule records stores object wise events and corresponding rules to generate notification messages.</description>
+    <fields>
+        <fullName>crms11__Aggregate_Results__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If aggregate results is true then a single message would be generated from multiple query results.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>If aggregate results is true then a single message would be generated from multiple query results.</inlineHelpText>
+        <label>Aggregate_Results</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>crms11__Class_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Class name which implements &quot;CRMS_PopupService&quot; interface and provides logic to generate notifications.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Class name which implements &quot;CRMS_PopupService&quot; interface and provides logic to generate notifications.</inlineHelpText>
+        <label>Class Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>crms11__Disable_Rule__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Disable this rule from generating notifications for all users.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Disable this rule from generating notifications for all users.</inlineHelpText>
+        <label>Disable Rule</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>crms11__Event__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Event</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>crms11__Message_Template_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the label which contains the message template.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Name of the label which contains the message template.</inlineHelpText>
+        <label>Message Template Label</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>crms11__Priority__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Priority of notification rule controls the order in which notification are displayed. Smaller valued notifications are displayed on higher priority. Example notifications with priority 1 would be shown before that of 2.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Priority of notification rule controls the order in which notification are displayed. Smaller valued notifications are displayed on higher priority. Example notifications with priority 1 would be shown before that of 2.</inlineHelpText>
+        <label>Priority</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>crms11__Query_Object__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Query target object against which query will be run against.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Query target object against which query will be run against.</inlineHelpText>
+        <label>Query Object</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>crms11__Query_Template_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the custom label which contains template to build query.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Name of the custom label which contains template to build query.</inlineHelpText>
+        <label>Query Template Label</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>crms11__Source_Object_Name__c</fullName>
+        <defaultValue>&quot;Product2&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Object on which notifications are expected to be generated. &quot;recordId&quot; merge field is set to record of this object type.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Object on which notifications are expected to be generated. &quot;recordId&quot; merge field is set to record of this object type.</inlineHelpText>
+        <label>Source Object Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Notification Rule</label>
+    <pluralLabel>Notification Rules</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

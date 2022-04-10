@@ -1,0 +1,55 @@
+/**
+ * Created by akireyeu on 11.02.2020.
+ */
+.THIS.c-container {
+    border: 1px solid #d8dde6;
+    margin: 10px;
+    padding: 10px;
+}
+.THIS .icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.THIS .iconsInner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.THIS .container {
+    display: flex;
+    align-items: center;
+    width: 20%;
+}
+.THIS .over {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 30ch;
+    max-height: 3ch;
+}
+.THIS .containerInner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+.THIS .slds-button {
+    display: flex;
+}
+.THIS .box {
+    display: flex;
+    margin: 0 10px;
+    min-width: 80px;
+}
+.THIS .scrollerSize {
+    max-height: 100px;
+    max-width: 300px;
+}
+.THIS .slds-button_icon-border {
+    display: flex;
+    border: none;
+    align-items: center;
+}

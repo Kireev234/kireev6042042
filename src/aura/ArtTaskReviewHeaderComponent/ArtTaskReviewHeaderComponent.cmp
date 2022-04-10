@@ -1,0 +1,27 @@
+<!--
+ - Created by akireyeu on 12.02.2020.
+ -->
+
+<aura:component description="ArtTaskReviewHeaderComponent">
+
+    <aura:attribute name="field" type="Object"/>
+
+    <aura:handler event="c:ArtTaskAppEvent" action="{!c.handleApplicationEventFired}"/>
+
+    <aura:registerEvent name="myEvent" type="c:ArtTaskEvent"/>
+
+    <div class="container">
+        <div style="margin-right: 5px">
+            <b>{!v.field.name}</b>
+        </div>
+        <div>
+            <aura:if isTrue="{! v.field.arrowDirection == 'arrowdown'}">
+                <lightning:buttonIcon iconName="utility:arrowup"  size="small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByName }" />
+            </aura:if>
+            <aura:if isTrue="{! v.field.arrowDirection != 'arrowdown'}">
+                <lightning:buttonIcon iconName="utility:arrowdown"  size="small"  variant="bare" alternativeText="Sort" onclick="{! c.sortByNameRevers }" />
+            </aura:if>
+        </div>
+    </div>
+
+</aura:component>

@@ -1,0 +1,24 @@
+<!--
+ - Created by akireyeu on 11.07.2019.
+ -->
+<aura:component description="FieldSetComp" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" controller="MyFieldSet" access="global">
+    <aura:handler  name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:attribute type="String" name="objectName"/>
+    <aura:attribute type="String" name="fieldSetName"/>
+    <aura:attribute type="Object[]" name="listFieldSet" />
+    <aura:attribute name="theForm" type="Aura.Component[]" />
+    <aura:attribute name="sObjectName" type="Opportunity" default="{'sobjectType' : 'Opportunity'}" />
+
+    <div class="container" style="margin: 10px">
+        <lightning:textarea aura:id="input1" name="input1" label="Object name"/>
+    </div>
+    <div class="container" style="margin: 10px">
+        <lightning:textarea aura:id="input2" name="input2" label="Object field sets name"/>
+        <lightning:button aura:id="enter2" name="Enter" label="Enter"  onclick="{! c.input2}"/>
+    </div>
+    <aura:iteration items="{!v.theForm}" var="facet" >
+
+            {!facet}
+
+    </aura:iteration>
+</aura:component>

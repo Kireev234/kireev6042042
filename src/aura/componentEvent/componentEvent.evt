@@ -1,0 +1,10 @@
+<!--
+ - Created by ALEX on 30.05.2019.
+ -->
+
+<aura:event type="COMPONENT" description="componentEvent">
+
+    <aura:attribute name="param" type="String"/>
+    <aura:attribute name="showPicList" type="Boolean"/>
+
+</aura:event>

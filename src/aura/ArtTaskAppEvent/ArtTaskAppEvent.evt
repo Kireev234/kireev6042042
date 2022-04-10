@@ -1,0 +1,8 @@
+<!--
+ - Created by akireyeu on 14.02.2020.
+ -->
+
+<aura:event type="APPLICATION" description="ArtTaskAppEvent">
+    <aura:attribute name="context" type="String"/>
+    <aura:attribute name="name" type="String"/>
+</aura:event>

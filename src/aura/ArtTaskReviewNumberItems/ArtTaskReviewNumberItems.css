@@ -1,0 +1,15 @@
+/**
+ * Created by akireyeu on 12.02.2020.
+ */
+.THIS {
+}
+.THIS .number {
+    width: 50px;
+    margin:0 5px;
+}
+.THIS.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+}

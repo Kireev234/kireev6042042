@@ -1,0 +1,23 @@
+<!--
+ - Created by akireyeu on 12.02.2020.
+ -->
+
+<aura:component description="ArtTaskReviewNumberItems">
+
+    <aura:registerEvent name="myEvent" type="c:ArtTaskEvent"/>
+
+    <div class="container">
+        <div>
+            Show Entries
+        </div>
+        <div class="number">
+            <ui:inputSelect class="entries" aura:id="recordsReview" change="{!c.onSelectChange}">
+                <ui:inputSelectOption text="5" value="5"/>
+                <ui:inputSelectOption text="10" value="10"/>
+                <ui:inputSelectOption text="20" value="20"/>
+                <ui:inputSelectOption text="30" value="30"/>
+            </ui:inputSelect>
+        </div>
+    </div>
+
+</aura:component>

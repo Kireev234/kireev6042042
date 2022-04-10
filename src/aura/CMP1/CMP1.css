@@ -1,0 +1,64 @@
+/**
+ * Created by akireyeu on 08.10.2019.
+ */
+
+
+.THIS .rectangle {
+    width: 160px;
+    height: 90px;
+    background: #008000;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.THIS.container {
+     display: flex;
+     align-items: center;
+     margin-top: 25px;
+    margin-right: 25px;
+     flex-direction: column;
+     /*position: relative;
+     left: 25%;*/
+
+
+ }
+.THIS .containerItems {
+    display: flex;
+
+}
+.THIS .element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.THIS .elementItemsVer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: 10px;
+}
+.THIS .containerArrow {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+
+}
+.THIS .arrowL {
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 15px;
+    align-content: center;
+}
+.THIS .arrowR {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 80px;
+    align-content: center;
+}

@@ -1,0 +1,34 @@
+<!--
+ - Created by akireyeu on 22.01.2020.
+ -->
+
+<aura:component description="Rate" controller="RateApex" implements="force:appHostable,flexipage:availableForAllPageTypes" access="global">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:attribute name="usd" type="Integer" />
+    <aura:attribute name="eur" type="Integer" />
+    <aura:attribute name="rub" type="Integer" />
+    <aura:attribute name="pln" type="Integer" />
+    <aura:attribute name="city" type="String" />
+    <aura:attribute name="street" type="String" />
+    <aura:attribute name="home" type="String" />
+
+    <div>
+           <b>USD = </b> {!v.usd}
+    </div>
+    <div>
+          <b>EUR = </b> {!v.eur}
+    </div>
+    <div>
+          <b>RUB = </b> {!v.rub}
+    </div>
+    <div>
+          <b>PLN = </b> {!v.pln}
+    </div>
+    <div>
+        <b>CITY - </b> {!v.city}
+    </div>
+    <div>
+        <b>ADDRESS - </b> {!v.street},{!v.home}
+    </div>
+
+</aura:component>

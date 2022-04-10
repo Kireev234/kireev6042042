@@ -1,0 +1,74 @@
+<!--
+ - Created by akireyeu on 24.12.2019.
+ -->
+
+<aura:component description="ArtTaskProductTable" controller="ArtTaskProductTableApex" implements="force:appHostable,flexipage:availableForAllPageTypes" access="global">
+    <aura:method name="methodTable" action="{!c.setTruth}" access="global">
+        <aura:attribute name="truth" type="Boolean" />
+    </aura:method>
+
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+
+    <aura:attribute name="data" type="List"/>
+    <aura:attribute name="columns" type="List"/>
+
+    <!--###### MODAL BOX Start######-->
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <!-- ###### MODAL BOX HEADER Start ######-->
+            <header class="slds-modal__header">
+                <lightning:buttonIcon iconName="utility:close"
+                                      onclick="{! c.closeModelTable }"
+                                      alternativeText="close"
+                                      variant="bare-inverse"
+                                      class="slds-modal__close"/>
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Reviews</h2>
+            </header>
+            <!--###### MODAL BOX BODY Part Start######-->
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <table >
+                    <tr > <td style="width:5%">Show</td><td style="width:7%"><ui:inputSelect aura:id="records" change="{!c.onSelectChange}">
+                        <ui:inputSelectOption text="5" value="5"/>
+                        <ui:inputSelectOption text="10" value="10"/>
+                        <ui:inputSelectOption text="20" value="20"/>
+                        <ui:inputSelectOption text="30" value="30"/>
+                    </ui:inputSelect></td><td>Entries</td>
+                        <td style="width:7%">Search</td>
+                        <td style="width:25%">
+                            <ui:inputText aura:id="input1"   change="{!c.searchKeyChange}"   required="true"></ui:inputText>
+                        </td>
+                    </tr>
+                </table>
+                <table class="slds-table slds-table–bordered ">
+                    <thead>
+                    <tr style="background-color:#6cbcd2;color:white;font-weight:bold">
+                        <th>Name</th>
+                        <th>View</th>
+                        <th>Like</th>
+                        <th>Dislike</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <aura:iteration items="{!v.reviewList}" var="item">
+                        <tr>
+                            <td><ui:outputText value="{!item.Name}" /></td>
+                            <td><ui:outputText value="{!item.Views__c}" /></td>
+                            <td><ui:outputText value="{!item.Like__c}" /></td>
+                            <td><ui:outputText value="{!item.Dislike__c}" /></td>
+                        </tr>
+                    </aura:iteration>
+                    <lightning:button label="First"   onclick="{!c.first}" />
+                    <lightning:button label="Previous"   onclick="{!c.previous}" />
+                    <lightning:button label="Next"  onclick="{!c.next}" />
+                    <lightning:button label="Last"  onclick="{!c.last}" />
+                    </tbody>
+
+                </table>
+            </div>
+            <!--###### MODAL BOX FOOTER Part Start ######-->
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+    <!--###### MODAL BOX Part END Here ######-->
+
+</aura:component>

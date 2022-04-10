@@ -1,0 +1,19 @@
+<!--
+ - Created by AlexanderKireev on 3/27/2020.
+ -->
+
+<!-- Main Lwc -->
+<template>
+<!--    {value}-->
+    <lightning-card >
+        <div style="width: 30%">
+            <c-get-all-objects-from-org onshowdata={handleData}></c-get-all-objects-from-org>
+        </div>
+        <div style="margin-left: 18px">
+            <c-get-object-fields objectapi={value} onselectfields={handleDataTable}></c-get-object-fields>
+        </div>
+        <div style="margin:0px 18px">
+            <c-data-table-lwc objectapi={value} ></c-data-table-lwc>
+        </div>
+    </lightning-card>
+</template>
